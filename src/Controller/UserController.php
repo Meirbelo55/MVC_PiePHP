@@ -1,4 +1,5 @@
 <?php 
+        namespace UserController;
         class UserController
         {
             public function run()
