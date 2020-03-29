@@ -1,8 +1,7 @@
 <?php
-      namespace Controller;
-        class Controller
+        class AppController
         {
-            public function ru()
+            public function Action()
                 {
                 echo __CLASS__ ."[ je maple ]". PHP_EOL ;
                 }

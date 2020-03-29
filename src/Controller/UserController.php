@@ -1,10 +1,8 @@
 <?php 
-        namespace UserController;
-        class UserController
-        {
-            public function run()
-                {
-                echo __CLASS__ ."[ je suis controller ]". PHP_EOL ;
-                }
-        }
-    
+            class UserController
+            {
+               public function addAction()
+               {
+                   echo 'hello';
+               } 
+            }

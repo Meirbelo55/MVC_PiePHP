@@ -34,5 +34,10 @@
                     {
                     require($newpath);
                     }
+                    else
+           {
+            echo 'j existe pas';
            }
-           spl_autoload_register("Autoload");
+           
+           }
+          spl_autoload_register("Autoload");
