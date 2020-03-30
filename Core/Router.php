@@ -1,17 +1,15 @@
 <?php
      class Router 
      {
-       public function connect()
+       private static $routes;
+       public static function connect($url, $route)
        {
-
+           var_dump(self::$routes[$url] = $route);
        }
-       public function get()
+       public  static function get($url)
        {
-
+        //return array_key_exists($url,self::$routes) ? self::$routes[$url]:null;
        }
 
      }
-     class Controller 
-     {
-
-     }
+     
