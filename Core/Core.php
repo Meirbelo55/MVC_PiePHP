@@ -8,7 +8,7 @@ namespace Core;
             $arr = explode('/',$_SERVER['REDIRECT_URL']);
             $class =  ucfirst($arr[2]).'Controller';
             $action = $arr[3].'Action';
-            echo $class;
+            //echo $class;
             //echo $action;
             //var_dump(method_exists($class,$action));
 
@@ -27,11 +27,20 @@ namespace Core;
                          $app = new \AppController;
                          $app->$action();
                        }
+                        elseif(class_exists($class) && (!method_exists($class,$action)))
+                       {
+                         
+                        echo 'eror';
+                         $erreur = new \Error404;
+                         $erreur->error();
+                       }
                         
                   //sinn ereur 404
                   else
                   {
-                require('src/Error/404.php');
+                   echo 'yyyyy';
+                   $erreur = new \Error404;
+                   $erreur->$action();
 
                   }
                   

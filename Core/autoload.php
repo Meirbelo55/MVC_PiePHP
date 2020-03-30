@@ -14,9 +14,19 @@
                     }
                       if(!file_exists($newmodel))
                       {
-                      $srcview = __DIR__.'View/'.$class_name;
+                       $srcview = __DIR__.'View/Error'.$class_name;
                       $newview = str_replace('Core','src/',$srcmodel).$ext;
+                     // echo $newview;
                       }
+
+                      if(!file_exists($newview))
+                      {
+                        echo 'bom';
+                      $error = __DIR__.'View/Error'.$class_name;
+                      $newerror = str_replace('Core','src/',$srcmodel).$ext;
+                      }
+
+
                         if(file_exists($newview))
                           {
                           require($newview);
@@ -28,6 +38,12 @@
                               if(file_exists($newmodel))
                               {
                               require($newmodel);
+                              }
+
+                              if(file_exists($newerror))
+                              {
+                                echo 'hhhh';
+                              require($newerror);
                               }
                   }
                     elseif(file_exists($newpath))
