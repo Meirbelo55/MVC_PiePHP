@@ -2,14 +2,24 @@
      class Router 
      {
        private static $routes;
-       public static function connect($url, $route)
+       public static function connect($url,$route)
        {
-           var_dump(self::$routes[$url] = $route);
+         $newurl = substr($url,11);
+          //$staticcontroller = $route[2];
+               // $staticaction = $route[3];
+         self::$routes[$url] = $route;
+         var_dump($route);
+      //pour cheker si il ya ube route static
+        if($register = $controller[2])
+        {
+          //echo 'bbbb';
+        }
+        
        }
        public  static function get($url)
        {
-        //return array_key_exists($url,self::$routes) ? self::$routes[$url]:null;
+
        }
 
-     }
+      }
      

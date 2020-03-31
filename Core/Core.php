@@ -4,18 +4,25 @@ namespace Core;
 use Router;
       class Core
       {
+        public function __construct()
+        {
+        require_once('src/routes.php');
+        }
             public function run()
             {
-            $_SERVER['REDIRECT_URL'];
+            var_dump(Router::get($_SERVER['REDIRECT_URL']));
             $arr = explode('/',$_SERVER['REDIRECT_URL']);
             $class =  ucfirst($arr[2]).'Controller';
             $action = $arr[3].'Action';
-            //routeru static
-              if(($route = Router::get($_serveur['REDIRECT_URL']))!=null)
+            //Router::connect($url,$route);
+            //routeur static
+            //if url est static alr go to route static
+              if(($route = Router::get($_SERVER['REDIRECT_URL']) != null))
               {
               echo 'custom root found';
-              $controller = $route['controller'];
-              echo $theaction = $route['user'];
+              //echo $route;
+               $controller = $route['controller'];
+              //echo $theaction = $route['user'];
               }
                 else
                 {
