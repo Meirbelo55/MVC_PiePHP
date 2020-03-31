@@ -10,19 +10,16 @@ use Router;
         }
             public function run()
             {
-            var_dump(Router::get($_SERVER['REDIRECT_URL']));
+            Router::connect($url,$route);
             $arr = explode('/',$_SERVER['REDIRECT_URL']);
             $class =  ucfirst($arr[2]).'Controller';
             $action = $arr[3].'Action';
-            //Router::connect($url,$route);
-            //routeur static
+               $route = Router::get($_SERVER['REDIRECT_URL']);
+      
             //if url est static alr go to route static
-              if(($route = Router::get($_SERVER['REDIRECT_URL']) != null))
+              if(( Router::get($routes) != null))
               {
               echo 'custom root found';
-              //echo $route;
-               $controller = $route['controller'];
-              //echo $theaction = $route['user'];
               }
                 else
                 {
