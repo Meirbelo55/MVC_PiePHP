@@ -2,32 +2,30 @@
 
 namespace Core;
 use Router;
-      class Core
-      {
-        public function __construct()
-        {
-        require_once('src/routes.php');
-        }
-            public function run()
-            {
-            Router::connect($url,$route);
-            $arr = explode('/',$_SERVER['REDIRECT_URL']);
-            $class =  ucfirst($arr[2]).'Controller';
-            $action = $arr[3].'Action';
-               $route = Router::get($_SERVER['REDIRECT_URL']);
-      
+      class Core {
+        public function __construct() {
+          require_once('src/routes.php');
+      }
+      public function run() {
+        Router::connect($url,$route);
+        $arr = explode('/',$_SERVER['REDIRECT_URL']);
+        $class =  ucfirst($arr[2]).'Controller';
+        $action = $arr[3].'Action';
+        
             //if url est static alr go to route static
-              if(( Router::get($routes) != null))
-              {
-              echo 'custom root found';
-              }
-                else
-                {
-                 //si la class et la method exist alors j instancie selon ce kil met en parametre
-                    if (class_exists($class)AND(method_exists($class,$action))) 
-                    {
-                          $controller = new $class;
-                          $controller-> $action();  
+ if((Router::connect($url,$route)!= ["null"])) {
+        echo 'custom root found';
+        Router::get($url);
+        //Router::connect($url,$route);
+       // var_dump($a);
+        //$static = new UserController;
+        //$static->addAction;
+        }
+        else  {
+          //si la class et la method exist alors j instancie selon ce kil met en parametre
+          if (class_exists($class)AND(method_exists($class,$action))) {
+            $controller = new $class;
+            $controller-> $action();  
                     }
                       elseif(($class == 'Controller')||(class_exists($class)))
                         {
