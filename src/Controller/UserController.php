@@ -1,6 +1,7 @@
-<?php 
-    class UserController    {
-        public function addAction() {
+<?php
+namespace Controller;
+    class UserController extends Controller    {
+        public function addAction()  {
         echo 'i am addAction';
         } 
         public function indexAction()   {

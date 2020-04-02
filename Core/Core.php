@@ -1,5 +1,4 @@
 <?php
-
 namespace Core;
 use Router;
       class Core {
@@ -11,11 +10,11 @@ use Router;
         $arr = explode('/',$_SERVER['REDIRECT_URL']);
         $class =  ucfirst($arr[2]).'Controller';
         $action = $arr[3].'Action';
-        
-            //if url est static alr go to route static
- if((Router::connect($url,$route)!= ["null"])) {
-        echo 'custom root found';
         Router::get($url);
+            //if url est static alr go to route static
+ if((Router::$route!="null")) {
+        echo 'custom root found';
+       // Router::connect($url);
         //Router::connect($url,$route);
        // var_dump($a);
         //$static = new UserController;

@@ -1,21 +1,22 @@
 <?php
     class Router {
       private static $routes;
-      public static function connect($url,$route) {
+      public static function connect() {
         self::$routes[$url]=$route;
-        //var_dump($route);
-        //var_dump($route);
       }
-      public static function get($url) { 
-        $newurl = substr($url,11);
-        //self::connect($url);
-        var_dump($url);
-        if(isset(self::$url))  {
-         return self::$routes[$url];
-        }
-        else {
-          return ["null"];
-        } 
+      public static function get($url) {
+        $res = $_SERVER['REQUEST_URI'];
+      $ttl = substr($res,11);
+          self::connect($url,$route);
+        //$tab = connect::get($url);
+
+       // var_dump($route);
+        //if(isset(self::$url))  {
+         //return self::$routes[$url];
+        //}
+        //else {
+        //return ["null"];
+        //} 
       }
     }
     
