@@ -6,13 +6,14 @@ use Router;
           require_once('src/routes.php');
       }
       public function run() {
-        Router::connect($url,$route);
         $arr = explode('/',$_SERVER['REDIRECT_URL']);
         $class =  ucfirst($arr[2]).'Controller';
         $action = $arr[3].'Action';
-        Router::get($url);
-            //if url est static alr go to route static
- if((Router::$route!="null")) {
+        $myurl = $_SERVER['REDIRECT_URL'];
+        $result = substr($myurl,11);
+        $route = Router::get($result);
+        var_dump($route); 
+       if($route !== null) {
         echo 'custom root found';
        // Router::connect($url);
         //Router::connect($url,$route);

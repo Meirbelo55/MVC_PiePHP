@@ -9,5 +9,5 @@ $f = implode (DIRECTORY_SEPARATOR,[dirname(__DIR__),'src','View',str_replace('Co
 }
 
 }
-Cette classe Controller doit être étendu par tous les Controllers qui se trouvent dan src/Controller.
-Et le but est que tu appelles cette fonction render dans UserController par exemple afin d'afficher une view.
+//Cette classe Controller doit être étendu par tous les Controllers qui se trouvent dan src/Controller.
+//Et lebbcvbvbvbut est que tu appelles cette fonction render dans UserController par exevbcxbmple afin d'afficher une view.

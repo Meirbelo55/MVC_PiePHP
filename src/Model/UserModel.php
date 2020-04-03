@@ -1,15 +1,12 @@
 <?php 
-namespace userModel;
+namespace Model;
+    class UserModel {
+      private $email;
+      private $password;
+    public function save() {
+      }
 
-class UserModel {
-    function dbConnect()  {
-        try  {
-        $db = new PDO('mysql:host=localhost;users;','root','root');
-        return $db;
-    }
-        catch(Exception $e)  {
-        die('Erreur : '.$e->getMessage());
-        }
-    }
+
+   
 }
     
