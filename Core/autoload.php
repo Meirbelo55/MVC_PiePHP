@@ -28,30 +28,30 @@
                       }
                         if(file_exists($newview))
                           {
-                          require($newview);
+                          require_once($newview);
                           }
                           if(file_exists($new))
                           {
-                          require($new);
+                          require_once($new);
                           }
                             if(file_exists($src))
                             {
-                            require($src);
+                            require_once($src);
                             }
                               if(file_exists($newmodel))
                               {
-                              require($newmodel);
+                              require_once($newmodel);
                               }
 
                               if(file_exists($newerror))
                               {
                                 echo 'hhhh';
-                              require($newerror);
+                              require_once($newerror);
                               }
                   }
                     elseif(file_exists($newpath))
                     {
-                    require($newpath);
+                    require_once($newpath);
                     }
                     elseif(!file_exists($newpath))
            {

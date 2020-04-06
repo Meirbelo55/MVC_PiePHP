@@ -12,5 +12,5 @@
  <input type = "submit" id="submit" name="submit" value="valider">
    </form>
 
-</body
+</body>
 </html>
