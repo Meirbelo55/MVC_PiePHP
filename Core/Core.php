@@ -25,16 +25,17 @@
             echo 'Erreur 404';
             }
             else  {
-              $app = new \UserController;
+              $app = new \Controller\UserController;
               $app->IndexAction();
             }
           }
           elseif(class_exists($class) && ($action !== 'Action'))  { 
-            $app = new \AppController;
+            $app = new \Controller\AppController;
             $app->IndexAction();
           }
           else  {
-            echo "Error 404";
+             $app = new \Model\UserModel;
+              $app->IndexAction();
           }
         }
       }

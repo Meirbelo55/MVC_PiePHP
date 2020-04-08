@@ -3,8 +3,10 @@ namespace Model;
     class UserModel {
       private $email;
       private $password;
-    public function save() {
-      $requet = $bdd->prepare('UPDATE users SET email = '.$email.', password = '.$password.'');
-		$requet->execute([":idabo" => $reponse_abonnement, ":prenom" => $prenom_abo]);
+    public function save(){
+      $this->dbconnect();
+      //$requet = $bdd->prepare('INSERT INTO users(email,password)VALUES($email,$password');
+    //$requet->execute([":email" => $email, ":password" => $password]);
+    echo 'hgf';
       }
 }
