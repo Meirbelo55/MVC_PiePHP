@@ -1,10 +1,10 @@
 <?php
-namespace Controller;
+ namespace Controller;
        class AppController
         {
-            public function IndexAction()
+            public function indexAction()
                 {
                 echo __CLASS__ ."[ je suis par defaut ]". PHP_EOL ;
                 }
        }
-                
+        

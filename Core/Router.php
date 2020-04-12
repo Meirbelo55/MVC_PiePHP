@@ -1,4 +1,5 @@
 <?php
+  namespace Core;
     class Router {
       private static $routes;
       public static function connect($url,$route) {
@@ -9,7 +10,6 @@
         if(isset(self::$routes[$url])) 
         {
           return self::$routes[$url];
-          
         }
         else{
          return null;

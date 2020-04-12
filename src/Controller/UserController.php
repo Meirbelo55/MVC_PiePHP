@@ -1,16 +1,23 @@
 <?php
-namespace Controller;
+ namespace Controller;
     class UserController extends \Core\Controller {
+        
         public function addAction()  {
-           $this->render('register');
+        echo $this->render('register');
         } 
         public function indexAction()   {
         echo 'je suis indexAction ds la class  usercontroller';
         }
         public function registerAction() {
-         // $email = $this->$_POST['email'];
-         // var_dump($email);
-           $app = new \Model\UserModel;
-           $app->save();
-        } 
+            $email  = $_POST['email'];
+            $password  = $_POST['password'];
+            $re = new \Model\UserModel($email,$password);
+            $re->save();
+        }
+       // public function loginAction() {
+        //  $email  = $_POST['email'];
+        //  $password  = $_POST['password'];
+         // $login = new \Model\UserModel($email,$password);
+         // $login->login();
+        //}
     }
